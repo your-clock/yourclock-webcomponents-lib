@@ -1,31 +1,52 @@
 version: 2.1
 
+references:
+
+  npm-cache-path: &npm-cache-path node_modules
+
+  dev-cache-key: &dev-cache-key yourclock-webcomponents-lib-{{ checksum "package.json" }}-{{ .Branch }}-dev-v1.0
+
+  restore_dev_cache: &restore_dev_cache
+    restore_cache:
+      keys:
+        - *dev-cache-key
+
+  save_dev_cache: &save_dev_cache
+    save_cache:
+      key: *dev-cache-key
+      paths:
+        - *npm-cache-path
+
 jobs:
-  sonar:
-    docker:
-      - image: circleci/node:stretch
-    steps:
-      - checkout
-      - sonarcloud/scan
   build:
     docker:
       - image: circleci/node:stretch
     steps:
       - checkout
+      - *restore_dev_cache
       - run:
           name: Install dependencies
           command: npm i
       - run:
           name: Build package
           command: npx vue-cli-service build --target lib --name yourclock-webcomponents-lib src/index.js
+      - *save_dev_cache
   publish-npm:
     docker:
       - image: circleci/node:stretch
     steps:
       - checkout
+      - *restore_dev_cache
       - run:
           name: Publish package in Github
           command: npm publish
+  sonar:
+    docker:
+      - image: circleci/node:stretch
+    steps:
+      - checkout
+      - *restore_dev_cache
+      - sonarcloud/scan
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
@@ -33,8 +54,6 @@ orbs:
 workflows:
   main:
     jobs:
-      - sonar:
-          context: SonarCloud
       - build:
           context: SonarCloud
       - publish-npm:
@@ -44,3 +63,5 @@ workflows:
             branches:
               only:
                 - main
+      - sonar:
+          context: SonarCloud
