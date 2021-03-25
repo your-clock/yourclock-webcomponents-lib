@@ -1,0 +1,46 @@
+version: 2.1
+
+jobs:
+  sonar:
+    docker:
+      - image: circleci/node:stretch
+    steps:
+      - checkout
+      - sonarcloud/scan
+  build:
+    docker:
+      - image: circleci/node:stretch
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Build package
+          command: npx vue-cli-service build --target lib --name yourclock-webcomponents-lib src/index.js
+  publish-npm:
+    docker:
+      - image: circleci/node:stretch
+    steps:
+      - checkout
+      - run:
+          name: Publish package in Github
+          command: npm publish
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+
+workflows:
+  main:
+    jobs:
+      - sonar:
+          context: SonarCloud
+      - build:
+          context: SonarCloud
+      - publish-npm:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
