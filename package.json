@@ -42,7 +42,8 @@
   "description": "## Project setup ``` npm install ```",
   "main": "dist/yourclock-webcomponents-lib.common.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "cache": "~/.npm"
   },
   "repository": {
     "type": "git",
