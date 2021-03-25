@@ -2,9 +2,17 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <alertClock class="lg warning" :msg="'hola'"/>
+    <br>
     <inputClock class="md" :disabled="false" type="email" placeholder="Escriba su correo electronico" v-bind:success="'null'"/>
-    <btnClock class="md" v-bind:name="'Ingresar'" v-bind:state="false"/>
+    <br>
+    <br>
+    <btnClock class="md" v-bind:name="'Ingresar'" v-bind:state="false" v-on:on-click="enviar"/>
+    <br>
     <titleClock id="title" v-bind:title="'Ingrese'"/>
+    <br>
+    <logoGoogle v-on:on-click="enviar"/>
+    <br>
+    <logoFacebook v-on:on-click="enviar"/>
   </div>
 </template>
 
@@ -14,6 +22,8 @@ import alertClock from '@/components/alert-clock.vue';
 import titleClock from '@/components/title-clock.vue';
 import btnClock from '@/components/btn-clock.vue';
 import inputClock from '@/components/input-clock.vue';
+import logoGoogle from '@/components/logo-google.vue';
+import logoFacebook from '@/components/logo-facebook.vue';
 
 export default {
   name: 'HelloWorld',
@@ -21,10 +31,17 @@ export default {
     titleClock, 
     btnClock,
     inputClock,
-    alertClock
+    alertClock,
+    logoGoogle,
+    logoFacebook
   },
   props: {
     msg: String
+  },
+  methods: {
+    enviar(){
+      console.log("Boton on click")
+    }
   }
 }
 </script>

@@ -52,6 +52,7 @@ export default {
         background-color: black;
         color: white;
         border: 1px solid white;
+        cursor: pointer;
     }
     button:disabled{
         background-color: white;

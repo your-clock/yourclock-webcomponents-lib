@@ -1,8 +1,8 @@
 <template>
     <div class="alert">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>¡Atencion!</strong>
-        <span> {{msg}}</span>
+        <strong>¡Atencion!  </strong>
+        <span>  {{msg}}</span>
     </div>
 </template>
 
