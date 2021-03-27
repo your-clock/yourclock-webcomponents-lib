@@ -7,7 +7,7 @@ export default {
     name: 'logo-facebook',
     props: {
 
-    }  
+    }
 }
 </script>
 
@@ -25,7 +25,7 @@ export default {
         color: #fff;
         content: "f";
         display: block;
-        font-family: Facebook Letter Faces, Arial;
+        font-family: Facebook Letter Faces, Arial, fantasy;
         font-size: 50px;
         font-weight: bold;
         margin: 6% 0 0 50%;
