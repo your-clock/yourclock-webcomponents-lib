@@ -78,7 +78,7 @@ const globals = {
 };
 
 // Customize configs for individual targets
-const buildFormats = [];
+const rollup = [];
 if (!argv.format || argv.format === 'es') {
   const esConfig = {
     ...baseConfig,
@@ -108,7 +108,7 @@ if (!argv.format || argv.format === 'es') {
       commonjs(),
     ],
   };
-  buildFormats.push(esConfig);
+  rollup.push(esConfig);
 }
 
 if (!argv.format || argv.format === 'cjs') {
@@ -132,7 +132,7 @@ if (!argv.format || argv.format === 'cjs') {
       commonjs(),
     ],
   };
-  buildFormats.push(umdConfig);
+  rollup.push(umdConfig);
 }
 
 if (!argv.format || argv.format === 'iife') {
@@ -161,8 +161,8 @@ if (!argv.format || argv.format === 'iife') {
       }),
     ],
   };
-  buildFormats.push(unpkgConfig);
+  rollup.push(unpkgConfig);
 }
 
 // Export config
-export default buildFormats;
+export default rollup;

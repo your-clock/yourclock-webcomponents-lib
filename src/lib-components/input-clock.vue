@@ -1,6 +1,6 @@
 <template>
 
-    <input v-bind:value="value" v-on:input="$emit('input', $event.target.value)" :type="type" :placeholder="placeholder" :disabled="disabled" :success="state">
+    <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :placeholder="placeholder" :disabled="disabled" :success="state">
 
 </template>
 
@@ -25,10 +25,14 @@ export default {
             type: Boolean,
             default: false
         },
-        value: {
-            
+        modelValue: {
+            type: String,
+            default: ''
         }
-    }
+    },
+    emits: [
+        'update:modelValue'
+    ]
 }
 
 </script>
