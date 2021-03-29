@@ -7,7 +7,7 @@
 <script>
 
 export default {
-    name: 'btn-clock',
+    name: 'textBtn-clock',
     props: {
         name: {
             type: String,
@@ -36,38 +36,28 @@ export default {
         height: 40px;
         font-size: 18px;
     }
-    
+
     button{
-        width: 100%;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        background-color: white;
-        color: black;
-        border: 1px solid black;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: all 0.3s ease;
+        border: none;
         outline: none;
+        background-color: inherit;
+        cursor: pointer;
+        font-size: 16px;
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: rgb(93, 112, 255);
     }
     button:hover{
-        background-color: black;
-        color: white;
-        border: 1px solid white;
-        cursor: pointer;
+        color: rgb(0, 8, 255);
+        text-decoration: underline;
     }
     button:disabled{
-        background-color: white;
         color: gray;
-        border: 1px solid grey;
     }
     button:active{
-        background-color: black;
         color: white;
-        border: 1px solid white;
     }
     button:focus{
-        background-color: grey;
-        color: black;
-        border: 1px solid grey;
+        color: rgb(0, 5, 164);
     }
 
 </style>

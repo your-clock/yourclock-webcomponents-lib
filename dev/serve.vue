@@ -10,6 +10,9 @@
     <br>
     <titleClock id="title" v-bind:title="'Ingrese'"/>
     <br>
+    <textBtnClock class="md" v-bind:name="'Link button'" v-bind:state="false" v-on:on-click="enviar"/>
+    <br>
+    <br>
     <logoGoogle v-on:on-click="enviar"/>
     <br>
     <logoFacebook v-on:on-click="enviar"/>
