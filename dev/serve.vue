@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <overlayClock :show="true" :msg="'Cargando...'"/>
+    <titleClock id="title" v-bind:title="'Ingrese'"/>
+    <br>
     <alertClock class="lg warning" :msg="'hola'"/>
     <br>
     <p>{{longitud}}</p>
@@ -8,9 +11,8 @@
     <br>
     <btnClock class="md" v-bind:name="'Ingresar'" v-bind:state="false" v-on:on-click="enviar"/>
     <br>
-    <titleClock id="title" v-bind:title="'Ingrese'"/>
     <br>
-    <textBtnClock class="md" v-bind:name="'Link button'" v-bind:state="false" v-on:on-click="enviar"/>
+    <textBtnClock class="md" v-bind:name="'Link button'" :target="'_blank'" :href="'#/auth'" v-bind:state="false" v-on:on-click="enviar"/>
     <br>
     <br>
     <logoGoogle v-on:on-click="enviar"/>
