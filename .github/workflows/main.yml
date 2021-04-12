@@ -16,13 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Restore cache
-      uses: actions/cache@v2
-      env:
-        cache-name: nodejs-github-actions
-      with:
-        path: node_modules
-        key: npm-${{ env.cache-name }}-${{ hashFiles('package.json') }}
-        restore-keys: npm-${{ env.cache-name }}
+        uses: actions/cache@v2
+        env:
+          cache-name: nodejs-github-actions
+        with:
+          path: node_modules
+          key: npm-${{ env.cache-name }}-${{ hashFiles('package.json') }}
+          restore-keys: npm-${{ env.cache-name }}
       - name: Install dependencies and build
         shell: bash
         run: npm i && npm run build
