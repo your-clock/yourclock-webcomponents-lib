@@ -25,7 +25,9 @@ jobs:
           restore-keys: npm-${{ env.cache-name }}
       - name: Install dependencies and build
         shell: bash
-        run: npm i && npm run build
+        run: |
+          export PACKAGE_TOKEN=${{ secrets.PACKAGE_TOKEN }}
+          npm i && npm run build
       - name: Persist Data
         uses: actions/upload-artifact@v2
         with:
