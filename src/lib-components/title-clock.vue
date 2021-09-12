@@ -1,5 +1,5 @@
 <template>
-    <h1 class="title-1">{{title}}</h1>
+    <h1 class="text">{{title}}</h1>
 </template>
 
 <script>
@@ -15,10 +15,26 @@ export default {
 </script>
 
 <style scoped>
-    .title-1{
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color:white;
-        font-size: 30px;
-        margin-bottom: 0rem;
+
+    .text{
+      font-family: font-clock-normal;
+      letter-spacing: 4px;
+      color:white;
+      font-size: 30px;
+      margin-bottom: 0rem;
+      margin-top: 0rem;
     }
+
+    .text.sm{
+      font-size: 15px;
+    }
+
+    .text.md{
+      font-size: 25px;
+    }
+
+    .text.lg{
+      font-size: 35px;
+    }
+
 </style>

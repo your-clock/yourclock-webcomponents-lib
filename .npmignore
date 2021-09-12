@@ -1,3 +1,4 @@
 public/
 sonar-project.properties
 .circleci/
+.github/
