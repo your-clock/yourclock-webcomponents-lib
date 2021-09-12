@@ -9,6 +9,7 @@ env:
   project_name: "yourclock-webcomponents-lib"
   language: "javascript" #javascript, java, python
   branch_default: "main"
+  CURRENT_VERSION: $(node -p "require('./package.json').version")
 
 jobs:
   build:
@@ -83,8 +84,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.get-version.outputs.version }}
-          body_path: |
-            ./CHANGELOG.txt
+          body_path: ./CHANGELOG.txt
           prerelease: false
           draft: false
 
