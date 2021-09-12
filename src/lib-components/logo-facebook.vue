@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
     #facebook {
-        background: #43609C;
+        background: #ffffff;
         border-radius: 9%;
         border-color: black;
         height: 50px;
@@ -22,7 +22,7 @@ export default {
     }
     
     #facebook:after {
-        color: #fff;
+        color: #000000;
         content: "f";
         display: block;
         font-family: Facebook Letter Faces, Arial, fantasy;
@@ -32,9 +32,9 @@ export default {
     }
     
     #facebook:hover {
-        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.90);
-        -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.90);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.90);
+        -moz-box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+        -webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
         cursor: pointer;
     }
 </style>

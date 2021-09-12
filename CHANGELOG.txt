@@ -1,0 +1,30 @@
+# **New version 1.0.0**
+
+- All styles have been changed
+- Some parameter names have been changed
+- added an authentication form molecule
+
+	Example:
+```html
+<formAuthClock
+          :hrefAccount="'#/account'"
+          :hrefPwd="'#/pwd'"
+          :targetPwd="'_blank'"
+          :targetAccount="'_self'"
+          :nameHrefPwd="'Olvide mi contraseña :c'"
+          :nameHrefAccount="'No tengo una cuenta :/'"
+          :titleForm="'Ingrese ahora'"
+          :titleAccounts="'O ingrese con:'"
+          :subtitle1="'Correo'"
+          :subtitle2="'Contraseña'"
+          :placeholderEmail="'Ingrese su correo electronico'"
+          :placeholderPwd="'Ingrese su contraseña'"
+          :minEmail="1"
+          :maxEmail="4"
+          :minPwd="2"
+          :maxPwd="6"
+          v-on:click-btn="enviar"
+          v-on:click-google="enviar"
+          v-on:click-facebook="enviar"
+/>
+```

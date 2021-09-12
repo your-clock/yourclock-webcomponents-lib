@@ -7,3 +7,5 @@ export { default as overlayClock } from './overlay-clock.vue';
 export { default as logoFacebook } from './logo-facebook.vue';
 export { default as logoGoogle } from './logo-google.vue';
 export { default as titleClock } from './title-clock.vue';
+export { default as formAuthClock } from './formAuth-clock.vue';
+export { default as fontsClock } from './fonts-clock.vue';

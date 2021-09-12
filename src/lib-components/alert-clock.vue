@@ -1,8 +1,8 @@
 <template>
     <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>¡Atencion!  </strong>
-        <span>  {{msg}}</span>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong class="title">{{title}}</strong>
+        <span class="message">{{msg}}</span>
     </div>
 </template>
 
@@ -17,6 +17,10 @@ export default {
         state: {
             type: Boolean,
             default: true
+        },
+        title: {
+          type: String,
+          required: true
         }
     }
 }
@@ -24,47 +28,66 @@ export default {
 
 <style scoped>
 
-.alert{
-    margin-bottom: 0px;
-}
-.lg{
-    font-size: 15px;
-    padding: 5px;
-    padding: 14px;
-}
 
-.sm{
+  .alert{
+    margin-bottom: 0px;
+  }
+
+  .message{
+    margin-left: 40px;
+    font-family: 'font-clock-italic'
+  }
+
+  .title{
+    font-family: 'font-clock-bold'
+  }
+
+  .lg{
     margin-left: auto;
     margin-right: auto;
-    font-size: 13px;
+    font-size: 20px;
+    padding: 17px;
+  }
+
+  .sm{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
     padding: 10px;
-}
+  }
 
-.danger.alert {
-    padding: 12px;
-    background-color: rgb(160, 0, 0);
-    color: white;
-}
+  .md{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    padding: 15px;
+  }
 
-.warning.alert {
-    padding: 12px;
-    background-color: #C0C000;
-    color: black;
-}
+  .danger.alert {
+      padding: 12px;
+      background-color: rgb(135, 0, 0);
+      color: white;
+  }
 
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+  .warning.alert {
+      padding: 12px;
+      background-color: #a1a100;
+      color: black;
+  }
 
-.closebtn:hover {
-    color: black;
-}
+  .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+
+  .closebtn:hover {
+      color: black;
+  }
 
 </style>

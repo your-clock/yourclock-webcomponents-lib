@@ -1,7 +1,12 @@
 <template>
-
-    <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :placeholder="placeholder" :disabled="disabled" :success="state">
-
+    <input
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
+        :type="type"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :success="state"
+    >
 </template>
 
 <script>
@@ -51,63 +56,54 @@ export default {
         height: 35px;
         font-size: 17px;
     }
+
     input{
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        width: 100%;
+        font-family: font-clock-normal;
         height: 30px;
         font-size: 14px;
-        padding-left: 10px;
+        padding-left: 5px;
+        padding-bottom: 0px;
+        color: white;
         border: 1px solid black;
-        border-radius: 5px;
+        letter-spacing: 1px;
+        border-bottom: 2px solid white;
+        background-color: black;
+        border-radius: 4px;
     }
-    input[success="null"]:disabled{
-        border: 1px solid rgb(0, 0, 0);
-        background-color: rgb(0, 0, 0);
+    input:hover::-webkit-input-placeholder{
+        color: rgb(175, 175, 175);
     }
-    input:disabled::-webkit-input-placeholder { 
-        color: white; 
-    } 
+    input:focus{
+        border: 1px dashed white;
+        border-bottom: 2px solid white;
+        outline: none;
+    }
+    input:focus::-webkit-input-placeholder{
+        color: rgb(175, 175, 175);
+    }
+    input:disabled{
+        color: rgb(135, 135, 135);
+        border-bottom: 2px dashed rgb(135, 135, 135);
+    }
+    input:disabled:hover{
+        cursor: not-allowed;
+    }
+    input:disabled::-webkit-input-placeholder {
+        color: rgb(135, 135, 135);
+    }
+
     input[success="true"]{
-        border: 1.5px solid rgb(0, 115, 0);
-        background-color: #e8f0fe;
+        background-image: url(../icons/ok-32.png);
+        background-repeat: no-repeat;
+        background-position: 99% center;
+        background-size: 20px;
     }
+
     input[success="false"]{
-        border: 1.5px solid rgb(185, 0, 0);
-        background-color: #FFEAEA;
-    }
-    input[success="null"]{
-        border: 1px solid black;
-        background-color: #EEEEEE;
-    }
-    input[success="true"]:focus{
-        box-shadow: 0 0 0 2px rgba(0, 115, 0, 0.4);
-        background-color: white;
-        outline: none;
-    }
-    input[success="false"]:focus{
-        box-shadow: 0 0 0 2px rgba(185, 0, 0, 0.4);
-        background-color: white;
-        outline: none;
-    }
-    input[success="null"]:focus{
-        box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.4);
-        background-color: white;
-        outline: none;
-    }
-    input[success="null"]:focus::-webkit-input-placeholder{
-        color: transparent;
-    }
-    input[success="true"]:hover{
-        box-shadow: 0 0 0 2px rgba(0, 115, 0, 0.4);
-        outline: none;
-    }
-    input[success="false"]:hover{
-        box-shadow: 0 0 0 2px rgba(185, 0, 0, 0.4);
-        outline: none;
-    }
-    input[success="null"]:hover{
-        box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.4);
-        outline: none;
+        background-image: url(../icons/x-mark-3-32.png);
+        background-repeat: no-repeat;
+        background-position: 99% center;
+        background-size: 20px;
     }
 
 </style>
