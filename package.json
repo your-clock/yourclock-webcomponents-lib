@@ -2,7 +2,7 @@
   "name": "@your-clock/yourclock-webcomponents-lib",
   "author": "Your-clock",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "Libreria de webcomponents hecha sobre VueJS V3 para el proyecto Your Clock",
   "keywords": [
@@ -17,7 +17,9 @@
   "unpkg": "dist/yourclock-webcomponents-lib.min.js",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/*.ttf",
+    "src/**/*.png"
   ],
   "sideEffects": false,
   "engines": {
