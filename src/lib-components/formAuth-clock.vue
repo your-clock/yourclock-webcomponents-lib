@@ -19,6 +19,8 @@
           :placeholder=placeholderEmail
           v-bind:success="comprobarEmail"
           v-model="userEmail"
+          :value="userEmail"
+          @input="$emit('update:userEmail', $event.target.value)"
       />
       <titleClock
           id="text-pwd"
@@ -33,6 +35,8 @@
           :placeholder=placeholderPwd
           v-bind:success="comprobarPassword"
           v-model="userPassword"
+          :value="userPassword"
+          @input="$emit('update:userPassword', $event.target.value)"
       />
       <textBtnClock
           id="href-pwd"
@@ -154,6 +158,13 @@ export default {
       default: 8
     }
   },
+  emits: [
+    "click-btn",
+    "click-google",
+    "click-facebook",
+    "update:userPassword",
+    "update:userEmail"
+  ],
   data(){
     return{
       userEmail: "",

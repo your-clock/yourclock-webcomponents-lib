@@ -15,7 +15,10 @@ export default {
             type: Boolean,
             default: false
         }
-    } 
+    },
+    emits: [
+      "on-click"
+    ]
 }
 
 </script>

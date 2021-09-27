@@ -1,8 +1,7 @@
-# **New version 1.0.0**
+# **New version 1.0.3**
 
-- All styles have been changed
-- Some parameter names have been changed
-- added an authentication form molecule
+- Fix somes issues:
+    - Added two parameters in formAuthClock to get values of inputs
 
 	Example:
 ```html
@@ -26,5 +25,14 @@
           v-on:click-btn="enviar"
           v-on:click-google="enviar"
           v-on:click-facebook="enviar"
+          v-model:userPassword="userPassword"
+          v-model:userEmail="userEmail"
 />
+```
+
+    - Added file to import fonts
+
+	Example:
+```html
+@import "../../node_modules/@your-clock/yourclock-webcomponents-lib/src/lib-components/fonts.css";
 ```

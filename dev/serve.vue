@@ -46,6 +46,8 @@
           v-on:click-btn="enviar"
           v-on:click-google="enviar"
           v-on:click-facebook="enviar"
+          v-model:userPassword="userPassword"
+          v-model:userEmail="userEmail"
       />
       <br>
       <br>
@@ -66,7 +68,9 @@ export default defineComponent({
   // }
   data(){
     return {
-      state: ""
+      state: "",
+      userEmail: "",
+      userPassword: ""
     }
   },
   computed:{
@@ -76,7 +80,7 @@ export default defineComponent({
   },
   methods: {
     enviar(){
-      console.log("Boton on click")
+      console.log(this.userEmail)
     }
   }
 });
