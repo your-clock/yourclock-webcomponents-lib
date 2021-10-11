@@ -199,7 +199,7 @@ export default {
   .auth {
     display: flex;
     flex-direction: column;
-    width: 35vh;
+    width: 300px;
     background: black;
     border-radius: 25px;
     padding: 40px 48px;
@@ -254,7 +254,7 @@ export default {
   .accounts {
     display: flex;
     flex-direction: column;
-    width: 35vh;
+    width: 300px;
     background: black;
     border-radius: 25px;
     padding: 24px 48px;
@@ -292,7 +292,7 @@ export default {
   .auth {
     display: flex;
     flex-direction: column;
-    width: 65vh;
+    width: 500px;
     background: black;
     border-radius: 25px;
     padding: 40px 48px;
@@ -302,7 +302,7 @@ export default {
   .accounts {
     display: flex;
     flex-direction: column;
-    width: 65vh;
+    width: 500px;
     background: black;
     border-radius: 25px;
     padding: 32px 48px;
@@ -375,7 +375,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   /* For mobile phones: */
   .form {
     display: flex;
@@ -388,7 +388,7 @@ export default {
     display: flex;
     flex-direction: column;
     background: black;
-    width: 90%;
+    width: 95%;
     box-sizing: border-box;
     border-radius: 25px;
     padding: 40px 48px;
@@ -399,7 +399,7 @@ export default {
     display: flex;
     flex-direction: column;
     background: black;
-    width: 90%;
+    width: 95%;
     box-sizing: border-box;
     border-radius: 25px;
     padding: 32px 48px;
