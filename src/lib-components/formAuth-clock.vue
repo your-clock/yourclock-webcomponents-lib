@@ -280,7 +280,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 700px) and(max-width: 1024px) {
   /* For tablets: */
   .form {
     display: flex;
@@ -388,7 +388,7 @@ export default {
     display: flex;
     flex-direction: column;
     background: black;
-    width: 95%;
+    width: 85%;
     box-sizing: border-box;
     border-radius: 25px;
     padding: 40px 48px;
@@ -399,7 +399,7 @@ export default {
     display: flex;
     flex-direction: column;
     background: black;
-    width: 95%;
+    width: 85%;
     box-sizing: border-box;
     border-radius: 25px;
     padding: 32px 48px;

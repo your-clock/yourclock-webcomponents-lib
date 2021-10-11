@@ -2,7 +2,7 @@
   "name": "@your-clock/yourclock-webcomponents-lib",
   "author": "Your-clock",
   "license": "MIT",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "description": "Libreria de webcomponents hecha sobre VueJS V3 para el proyecto Your Clock",
   "keywords": [
