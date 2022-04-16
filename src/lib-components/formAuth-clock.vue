@@ -179,7 +179,7 @@ export default {
       return this.userPassword.length <= this.minPwd ? 'null' : this.userPassword.length >= this.maxPwd ? 'true' : 'false'
     },
     comprobarBtnEnviar(){
-      return this.comprobarPassword == 'true' && this.comprobarEmail == 'true' ? false : true
+      return !(this.comprobarPassword === 'true' && this.comprobarEmail === 'true')
     }
   }
 }

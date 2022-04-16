@@ -4,6 +4,7 @@ import path from 'path';
 import vue from 'rollup-plugin-vue';
 import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import babel from '@rollup/plugin-babel';
@@ -36,12 +37,17 @@ const baseConfig = {
     ],
     replace: {
       'process.env.NODE_ENV': JSON.stringify('production'),
+      preventAssignment: true,
+    },
+    json: {
+      compact: true
     },
     vue: {
     },
     postVue: [
       resolve({
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+        preferBuiltins: true,
       }),
       // Process only `<style module>` blocks.
       PostCSS({
@@ -106,6 +112,7 @@ if (!argv.format || argv.format === 'es') {
         ],
       }),
       commonjs(),
+      json(baseConfig.plugins.json)
     ],
   };
   rollup.push(esConfig);
@@ -130,6 +137,7 @@ if (!argv.format || argv.format === 'cjs') {
       ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
       commonjs(),
+      json(baseConfig.plugins.json)
     ],
   };
   rollup.push(umdConfig);
@@ -154,6 +162,7 @@ if (!argv.format || argv.format === 'iife') {
       ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
       commonjs(),
+      json(baseConfig.plugins.json),
       terser({
         output: {
           ecma: 5,

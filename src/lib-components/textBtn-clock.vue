@@ -34,6 +34,13 @@ export default {
       font-size: 17px;
     }
 
+    a.black{
+      color: white;
+    }
+    a.white{
+      color: black;
+    }
+
     a{
       border: none;
       outline: none;
@@ -42,7 +49,7 @@ export default {
       font-size: 16px;
       font-family: font-clock-total;
       letter-spacing: 2px;
-      color: rgb(255, 255, 255);
+      color: white;
       text-decoration: none;
     }
     a:hover{

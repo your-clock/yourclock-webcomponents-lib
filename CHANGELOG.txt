@@ -1,4 +1,49 @@
-# **New version 1.0.5**
+# **New version 1.0.8**
 
-- Fix somes issues:
-    - fix sizes in responsive to formAuthClock
+- Fixes:
+    - fix placeholder input in firefox and adge
+    - refactor to validate input (most short sintax)
+
+- Features:
+    - adding select element, example:
+	```html
+	<selectClock
+		class="sm"
+		:enabledOptionTitle="true"
+		:optionTitle="'Este el el titulo del select'"
+		:options="['Ser', 'No ser', 'Tal vez']"
+		v-model="optionCLock"
+		:disabled="false"
+	/>
+	```
+
+	- adding form login element, example:
+	```html
+      <formLoginClock
+          :hrefAccount="'#/account'"
+          :targetAccount="'_self'"
+          :nameHrefAccount="'Ya tengo una cuenta :)'"
+          :titleForm="'Registrate'"
+          :placeholderEmail="'Ingrese su correo electronico'"
+          :placeholderPwd="'Ingrese una contraseña segura'"
+          :placeholderUserName="'Ingrese su nombre completo'"
+          :titleSelectCity="'Seleciona tu ciudad'"
+          :minEmail="1"
+          :maxEmail="4"
+          :minPwd="2"
+          :maxPwd="6"
+          :minUserName="2"
+          :maxUserName="6"
+          v-on:click-btn="enviar"
+          v-model:userPassword="userPassword"
+          v-model:userEmail="userEmail"
+          v-model:userName="userName"
+          v-model:userCity="userCity"
+      />
+    ```
+
+	-  now you can change color of input, select, title, button and text-button using white or black in class selector, example:
+    ```html
+    <titleClock class="lg white" v-bind:title="'Este es un titulo el color blanco'"/>
+    <titleClock class="lg black" v-bind:title="'Este es un titulo el color negro'"/>
+    ```

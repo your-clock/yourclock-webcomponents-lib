@@ -39,57 +39,74 @@ export default {
         font-size: 18px;
     }
 
-    /* Icono triangulo */
-    .continue-icon{
-        border-left: 25px solid #ffffff;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
+    button.black{
+      background-color: black;
+      color: white;
+      border: 2px solid white;
     }
-    .continue-icon:hover{
-        cursor: pointer;
+    button.white{
+      background-color: white;
+      color: black;
+      border: 2px solid black;
     }
     
     button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-        color: white;
-        border: 2px solid white;
-        border-radius: 10px;
-        outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      outline: none;
     }
     button:hover{
-        cursor: pointer;
+      cursor: pointer;
     }
     button:hover:before {
-        width: 100%;
+      width: 100%;
     }
     button:before{
-        content:"";
-        position: relative;
-        top: 0px;
-        left: 0px;
-        width: 0px;
-        height: 100%;
-        transition: all 1s ease;
+      content:"";
+      position: relative;
+      top: 0px;
+      left: 0px;
+      width: 0px;
+      height: 100%;
+      transition: all 1s ease;
     }
 
     button:disabled{
-        background-color: rgb(181, 181, 181);
-        border: 2px solid rgb(181, 181, 181);
-        cursor: not-allowed;
+      background-color: rgb(181, 181, 181);
+      border: 2px solid rgb(181, 181, 181);
+      cursor: not-allowed;
     }
     button:disabled:hover:before{
-        width: 0%;
+      width: 0%;
     }
     button:disabled:hover .continue-icon{
-        cursor: not-allowed;
+      cursor: not-allowed;
     }
     button:disabled .continue-icon{
-        border-left: 25px solid rgb(74, 74, 74);
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
+      border-left: 25px solid rgb(74, 74, 74);
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+
+    /* Icono triangulo */
+    .continue-icon{
+      border-left: 25px solid white;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+    .black .continue-icon{
+      border-left: 25px solid white;
+    }
+    .white .continue-icon{
+      border-left: 25px solid black;
+    }
+    .continue-icon:hover{
+      cursor: pointer;
     }
 
 </style>

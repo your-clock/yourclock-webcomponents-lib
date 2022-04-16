@@ -1,27 +1,53 @@
 <template>
   <div id="app">
     <overlayClock :show="false" :msg="'Cargando...'"/>
-    <titleClock id="title" class="lg" v-bind:title="'Ingrese ahora'"/>
-    <br>
     <alertClock class="lg danger" :msg="'hola'" :title="'Alerta'"/>
-    <br>
-    <p>{{longitud}}</p>
-    <inputClock class="md" :disabled="false" type="email" placeholder="Escriba su correo electronico" v-bind:success="'null'" v-model="state"/>
-    <br>
-    <br>
-    <btnClock class="md" :disabled="false" v-on:on-click="enviar"/>
-    <br>
-    <br>
-    <textBtnClock class="md" :disabled="false" v-bind:name="'Olvide mi contraseña :c'" :target="'_blank'" :href="'#/auth'" v-on:on-click="enviar"/>
-    <br>
-    <br>
-    <logoGoogle v-on:on-click="enviar"/>
-    <br>
-    <logoFacebook v-on:on-click="enviar"/>
-    <br>
-    <br>
-    <div id="form-auth">
+    <div id="black-section">
       <br>
+      <br>
+      <titleClock id="title" class="lg black" v-bind:title="'Ingrese ahora'"/>
+      <br>
+      <br>
+      <p>{{longitud}}</p>
+      <inputClock class="md black" :disabled="false" type="email" placeholder="Escriba su correo electronico" v-bind:success="'null'" v-model="state"/>
+      <br>
+      <br>
+      <btnClock class="md" :disabled="false" v-on:on-click="enviar"/>
+      <br>
+      <br>
+      <textBtnClock class="md" :disabled="false" v-bind:name="'Olvide mi contraseña :c'" :target="'_blank'" :href="'#/auth'" v-on:on-click="enviar"/>
+      <br>
+      <br>
+      <p>{{optionCLock}}</p>
+      <selectClock class="md black" :enabledOptionTitle="true" :optionTitle="'Selecciona tu opcion'" :options="['Ser', 'No ser', 'Tal vez']" v-model="optionCLock" :disabled="false"/>
+      <br>
+      <br>
+      <logoGoogle v-on:on-click="enviar"/>
+      <br>
+      <logoFacebook v-on:on-click="enviar"/>
+      <br>
+      <br>
+    </div>
+    <div id="white-section">
+      <br>
+      <br>
+      <titleClock id="title" class="lg white" v-bind:title="'Ingrese ahora'"/>
+      <br>
+      <br>
+      <inputClock class="md white" :disabled="false" type="email" placeholder="Escriba su correo electronico" v-bind:success="'null'" v-model="state"/>
+      <br>
+      <br>
+      <btnClock class="md white" :disabled="false" v-on:on-click="enviar"/>
+      <br>
+      <br>
+      <textBtnClock class="md white" :disabled="false" v-bind:name="'Olvide mi contraseña :c'" :target="'_blank'" :href="'#/auth'" v-on:on-click="enviar"/>
+      <br>
+      <br>
+      <selectClock class="sm white" :enabledOptionTitle="true" :optionTitle="'hola mundo como esta esto es un select'" :options="['Ser', 'No ser', 'Tal vez']" v-model="optionCLock" :disabled="false"/>
+      <br>
+      <br>
+    </div>
+    <div id="form-auth">
       <br>
       <br>
       <img src="../src/icons/logo.png">
@@ -51,6 +77,32 @@
       />
       <br>
       <br>
+    </div>
+    <div id="form-login">
+      <br>
+      <br>
+      <formLoginClock
+          :hrefAccount="'#/account'"
+          :targetAccount="'_self'"
+          :nameHrefAccount="'Ya tengo una cuenta :)'"
+          :titleForm="'Registrate'"
+          :placeholderEmail="'Ingrese su correo electronico'"
+          :placeholderPwd="'Ingrese una contraseña segura'"
+          :placeholderUserName="'Ingrese su nombre completo'"
+          :titleSelectCity="'Seleciona tu ciudad'"
+          :minEmail="1"
+          :maxEmail="4"
+          :minPwd="2"
+          :maxPwd="6"
+          :minUserName="2"
+          :maxUserName="6"
+          v-on:click-btn="enviar"
+          v-model:userPassword="userPassword"
+          v-model:userEmail="userEmail"
+          v-model:userName="userName"
+          v-model:userCity="userCity"
+      />
+      <br>
       <br>
     </div>
   </div>
@@ -69,8 +121,11 @@ export default defineComponent({
   data(){
     return {
       state: "",
+      optionCLock: "none",
       userEmail: "",
-      userPassword: ""
+      userPassword: "",
+      userName: "",
+      userCity: ""
     }
   },
   computed:{
@@ -96,8 +151,17 @@ export default defineComponent({
     width: 100%;
     background: black;
   }
+  #white-section{
+    background: white;
+  }
+  #black-section{
+    background: black;
+  }
   #form-auth {
     background: white;
+  }
+  #form-login {
+    background: black;
   }
   img{
     display: block;
@@ -110,5 +174,8 @@ export default defineComponent({
     margin-left: auto;
     margin-right: auto;
     width: 100vh;
+  }
+  p {
+    color: white;
   }
 </style>
