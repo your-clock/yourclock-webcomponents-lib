@@ -3,6 +3,7 @@
 - Fixes:
     - fix placeholder input in firefox and adge
     - refactor to validate input (most short sintax)
+    - fix icons in forms inputs
 
 - Features:
     - adding select element, example:
@@ -44,6 +45,6 @@
 
 	-  now you can change color of input, select, title, button and text-button using white or black in class selector, example:
     ```html
-    <titleClock class="lg white" v-bind:title="'Este es un titulo el color blanco'"/>
-    <titleClock class="lg black" v-bind:title="'Este es un titulo el color negro'"/>
+        <titleClock class="lg white" v-bind:title="'Este es un titulo el color blanco'"/>
+        <titleClock class="lg black" v-bind:title="'Este es un titulo el color negro'"/>
     ```

@@ -4,7 +4,8 @@ import path from 'path';
 import vue from 'rollup-plugin-vue';
 import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
-import json from '@rollup/plugin-json'
+import json from '@rollup/plugin-json';
+import image from '@rollup/plugin-image';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import babel from '@rollup/plugin-babel';
@@ -112,7 +113,8 @@ if (!argv.format || argv.format === 'es') {
         ],
       }),
       commonjs(),
-      json(baseConfig.plugins.json)
+      json(baseConfig.plugins.json),
+      image(),
     ],
   };
   rollup.push(esConfig);
@@ -137,7 +139,8 @@ if (!argv.format || argv.format === 'cjs') {
       ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
       commonjs(),
-      json(baseConfig.plugins.json)
+      json(baseConfig.plugins.json),
+      image(),
     ],
   };
   rollup.push(umdConfig);
@@ -163,6 +166,7 @@ if (!argv.format || argv.format === 'iife') {
       babel(baseConfig.plugins.babel),
       commonjs(),
       json(baseConfig.plugins.json),
+      image(),
       terser({
         output: {
           ecma: 5,

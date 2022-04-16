@@ -78,6 +78,7 @@ export default {
     font-size: 14px;
     color: white;
     border: 1px solid black;
+    padding-left: 5px;
     letter-spacing: 1px;
     border-bottom: 2px solid white;
     background-color: black;
@@ -87,7 +88,7 @@ export default {
     display: none;
   }
   .content-select{
-    overflow:hidden;
+    overflow: hidden;
     position: relative;
   }
   .content-select:before {
@@ -98,7 +99,7 @@ export default {
     border-style: solid;
     border-width: 11px 5px 0 5px;
     border-color: white transparent transparent transparent;
-    z-index: 100;
+    z-index: 91;
     pointer-events: none;
   }
   .content-select:after {
@@ -109,7 +110,7 @@ export default {
     border-width: 18px 14px 0 10px;
     border-style: solid;
     border-color: black;
-    z-index: 10;
+    z-index: 90;
     pointer-events: none;
   }
   .content-select.lg:after{
