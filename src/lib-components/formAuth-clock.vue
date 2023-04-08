@@ -1,75 +1,59 @@
 <template>
   <div class="form">
     <div class="auth">
-      <titleClock
-          id="text-title"
-          class="lg"
-          v-bind:title="titleForm"
-      />
-      <titleClock
-          id="text-email"
-          class="md"
-          v-bind:title="subtitle1"
-      />
+      <titleClock id="text-title" class="lg" v-bind:title="titleForm" />
+      <titleClock id="text-email" class="md" v-bind:title="subtitle1" />
       <inputClock
-          id="input-email"
-          class="sm"
-          :disabled="false"
-          type="email"
-          :placeholder=placeholderEmail
-          v-bind:success="comprobarEmail"
-          v-model="userEmail"
-          :value="userEmail"
-          @input="$emit('update:userEmail', $event.target.value)"
+        id="input-email"
+        class="sm"
+        :disabled="false"
+        type="email"
+        :placeholder="placeholderEmail"
+        v-bind:success="comprobarEmail"
+        v-model="userEmail"
+        :value="userEmail"
+        @input="$emit('update:userEmail', $event.target.value)"
       />
-      <titleClock
-          id="text-pwd"
-          class="md"
-          v-bind:title="subtitle2"
-      />
+      <titleClock id="text-pwd" class="md" v-bind:title="subtitle2" />
       <inputClock
-          id="input-pwd"
-          class="sm"
-          :disabled="false"
-          type="password"
-          :placeholder=placeholderPwd
-          v-bind:success="comprobarPassword"
-          v-model="userPassword"
-          :value="userPassword"
-          @input="$emit('update:userPassword', $event.target.value)"
+        id="input-pwd"
+        class="sm"
+        :disabled="false"
+        type="password"
+        :placeholder="placeholderPwd"
+        v-bind:success="comprobarPassword"
+        v-model="userPassword"
+        :value="userPassword"
+        @input="$emit('update:userPassword', $event.target.value)"
       />
       <textBtnClock
-          id="href-pwd"
-          class="sm"
-          :disabled="false"
-          v-bind:name="nameHrefPwd"
-          :target="targetPwd"
-          :href="hrefPwd"
+        id="href-pwd"
+        class="sm"
+        :disabled="false"
+        v-bind:name="nameHrefPwd"
+        :target="targetPwd"
+        :href="hrefPwd"
       />
       <btnClock
-          id="btn-login"
-          class="lg"
-          :disabled="comprobarBtnEnviar"
-          v-on:on-click="$emit('click-btn')"
+        id="btn-login"
+        class="lg"
+        :disabled="comprobarBtnEnviar"
+        v-on:on-click="$emit('click-btn')"
       />
       <textBtnClock
-          id="href-account"
-          class="sm"
-          :disabled="false"
-          v-bind:name="nameHrefAccount"
-          :target="targetAccount"
-          :href="hrefAccount"
+        id="href-account"
+        class="sm"
+        :disabled="false"
+        v-bind:name="nameHrefAccount"
+        :target="targetAccount"
+        :href="hrefAccount"
       />
     </div>
     <div class="accounts">
-      <titleClock
-          id="text-accounts"
-          class="sm"
-          v-bind:title="titleAccounts"
-      />
+      <titleClock id="text-accounts" class="sm" v-bind:title="titleAccounts" />
       <div class="list-accounts">
-        <logoGoogle id="google" v-on:on-click="$emit('click-google')"/>
-        <logoFacebook id="facebook" v-on:on-click="$emit('click-facebook')"/>
+        <logoGoogle id="google" v-on:on-click="$emit('click-google')" />
+        <logoFacebook id="facebook" v-on:on-click="$emit('click-facebook')" />
       </div>
     </div>
   </div>
@@ -77,116 +61,125 @@
 
 <script>
 export default {
-  name: 'formAuth-clock',
+  name: "formAuth-clock",
   props: {
     placeholderPwd: {
       type: String,
       require: false,
-      default: 'Ingrese su contraseña'
+      default: "Ingrese su contraseña",
     },
     placeholderEmail: {
       type: String,
       require: false,
-      default: 'Ingrese su correo electronico'
+      default: "Ingrese su correo electronico",
     },
     titleForm: {
       type: String,
       require: false,
-      default: 'Ingrese ahora'
+      default: "Ingrese ahora",
     },
     titleAccounts: {
       type: String,
       require: false,
-      default: 'O ingrese con:'
+      default: "O ingrese con:",
     },
     subtitle1: {
       type: String,
       require: false,
-      default: 'Correo'
+      default: "Correo",
     },
     subtitle2: {
       type: String,
       require: false,
-      default: 'Contraseña'
+      default: "Contraseña",
     },
     nameHrefPwd: {
       type: String,
       require: false,
-      default: 'Olvide mi contraseña'
+      default: "Olvide mi contraseña",
     },
     hrefPwd: {
       type: String,
-      require: true
+      require: true,
     },
     targetPwd: {
       type: String,
       require: false,
-      default: '_self'
+      default: "_self",
     },
     nameHrefAccount: {
       type: String,
       require: false,
-      default: 'No tengo una cuenta'
+      default: "No tengo una cuenta",
     },
     hrefAccount: {
       type: String,
-      require: true
+      require: true,
     },
     targetAccount: {
       type: String,
       require: false,
-      default: '_self'
+      default: "_self",
     },
     minEmail: {
       type: Number,
       require: false,
-      default: 0
+      default: 0,
     },
     maxEmail: {
       type: Number,
       require: false,
-      default: 6
+      default: 6,
     },
     minPwd: {
       type: Number,
       require: false,
-      default: 0
+      default: 0,
     },
     maxPwd: {
       type: Number,
       require: false,
-      default: 8
-    }
+      default: 8,
+    },
   },
   emits: [
     "click-btn",
     "click-google",
     "click-facebook",
     "update:userPassword",
-    "update:userEmail"
+    "update:userEmail",
   ],
-  data(){
-    return{
+  data() {
+    return {
       userEmail: "",
-      userPassword: ""
-    }
+      userPassword: "",
+    };
   },
-  computed:{
-    comprobarEmail(){
-      return this.userEmail.length <= this.minEmail ? 'null' : this.userEmail.length >= this.maxEmail ? 'true' : 'false'
+  computed: {
+    comprobarEmail() {
+      return this.userEmail.length <= this.minEmail
+        ? "null"
+        : this.userEmail.length >= this.maxEmail
+        ? "true"
+        : "false";
     },
-    comprobarPassword(){
-      return this.userPassword.length <= this.minPwd ? 'null' : this.userPassword.length >= this.maxPwd ? 'true' : 'false'
+    comprobarPassword() {
+      return this.userPassword.length <= this.minPwd
+        ? "null"
+        : this.userPassword.length >= this.maxPwd
+        ? "true"
+        : "false";
     },
-    comprobarBtnEnviar(){
-      return !(this.comprobarPassword === 'true' && this.comprobarEmail === 'true')
-    }
-  }
-}
+    comprobarBtnEnviar() {
+      return !(
+        this.comprobarPassword === "true" && this.comprobarEmail === "true"
+      );
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 @media only screen and (min-width: 1024px) {
   /* For desktop: */
   .form {
@@ -471,5 +464,4 @@ export default {
     margin-right: 16px;
   }
 }
-
 </style>
