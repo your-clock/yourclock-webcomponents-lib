@@ -59,6 +59,8 @@
       <br />
       <logoLinkedin class="black" v-on:on-click="enviar" />
       <br />
+      <logoJira class="black" v-on:on-click="enviar" />
+      <br />
     </div>
     <div id="white-section">
       <br />
@@ -104,6 +106,8 @@
       <logoOutlook class="white" v-on:on-click="enviar" />
       <br />
       <logoLinkedin class="white" v-on:on-click="enviar" />
+      <br />
+      <logoJira class="white" v-on:on-click="enviar" />
       <br />
       <selectClock
         class="sm white"

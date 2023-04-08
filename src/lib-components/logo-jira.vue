@@ -26,10 +26,16 @@ export default {
   transform: rotate(45deg);
 }
 #jira.black {
-  background-color: white;
+  border-top: 22px solid #b1b1b1;
+  border-right: 22px solid #505050;
+  border-bottom: 22px solid #b1b1b1;
+  border-left: 22px solid #505050;
 }
 #jira.white {
-  background-color: black;
+  border-top: 22px solid #b1b1b1;
+  border-right: 22px solid #505050;
+  border-bottom: 22px solid #b1b1b1;
+  border-left: 22px solid #505050;
 }
 
 .squared {
@@ -64,17 +70,41 @@ export default {
   position: fixed;
 }
 .squared-right {
-  background-image: linear-gradient(3600deg, #0053cd, #2684ff 50%);
+  background-image: linear-gradient(360deg, #0053cd, #2684ff 50%);
   height: 26px;
   width: 15px;
   margin: -22px 0 0 7px;
   border-radius: 0 4px 0 0;
   position: fixed;
 }
-#git.black .squared {
+#jira.black .squared-top {
+  background-color: #b1b1b1;
+}
+#jira.white .squared-top {
+  background-color: #b1b1b1;
+}
+#jira.black .squared-bottom {
+  background-color: #b1b1b1;
+}
+#jira.white .squared-bottom {
+  background-color: #b1b1b1;
+}
+#jira.black .squared-left {
+  background-image: linear-gradient(#505050, #b1b1b1 50%);
+}
+#jira.white .squared-left {
+  background-image: linear-gradient(#505050, #b1b1b1 50%);
+}
+#jira.black .squared-right {
+  background-image: linear-gradient(360deg, #505050, #b1b1b1 50%);
+}
+#jira.white .squared-right {
+  background-image: linear-gradient(360deg, #505050, #b1b1b1 50%);
+}
+#jira.black .squared {
   background-color: black;
 }
-#git.white .squared {
+#jira.white .squared {
   background-color: white;
 }
 
